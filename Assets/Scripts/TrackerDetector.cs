@@ -18,12 +18,14 @@ public class TrackerDetector : MonoBehaviour,ITrackableEventHandler {
 	}
 
 	public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus,TrackableBehaviour.Status newStatus) {
-		if (newStatus == TrackableBehaviour.Status.DETECTED || newStatus == TrackableBehaviour.Status.TRACKED || newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) {
-			LogoInfoScreenAnimator.SetBool ("visible", true);
-			Debug.Log (mTrackableBehaviour.TrackableName + "found");
-		} else {
-			Debug.Log (mTrackableBehaviour.TrackableName + "lost");
-			LogoInfoScreenAnimator.SetBool ("visible", false);
+		if (TrackerEnabler.isTracking) {
+			if (newStatus == TrackableBehaviour.Status.DETECTED || newStatus == TrackableBehaviour.Status.TRACKED || newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) {
+				LogoInfoScreenAnimator.SetBool ("visible", true);
+				Debug.Log (mTrackableBehaviour.TrackableName + "found");
+			} else {
+				Debug.Log (mTrackableBehaviour.TrackableName + "lost");
+				LogoInfoScreenAnimator.SetBool ("visible", false);
+			}
 		}
 	}
 }
