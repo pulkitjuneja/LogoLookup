@@ -1,0 +1,38 @@
+{
+    "Google": {
+        "Description": "an American multinational technology company that specializes in Internet-related services and products. These include online advertising technologies, search, cloud computing, software, and hardware",
+        "stock": {
+            "stockPrice": "926.38$",
+            "stockRate": "-10.96(-1.17%)",
+            "stockName": "GOOG",
+            "lastUpdated": "5 sept 3:50 PM"
+        }
+    },
+    "Amazon": {
+        "Description": " an American electronic commerce and cloud computing company based in Seattle, Washington that was founded by Jeff Bezos",
+        "stock": {
+            "stockPrice": "965.00$",
+            "stockRate": "-13.25(-1.35%)",
+            "stockName": "AMZN",
+            "lastUpdated": "5 sept 3:50 PM"
+        }
+    },
+    "Mckinsey": {
+        "Description": "a worldwide management consulting firm.",
+        "stock": {
+            "stockPrice": "926.38$",
+            "stockRate": "-10.96(-1.17%)",
+            "stockName": "MCK",
+            "lastUpdated": "5 sept 3:50 PM"
+        }
+    },
+    "Samsung": {
+        "Description": "South Korean multinational conglomerate headquartered in Samsung Town, Seoul",
+        "stock": {
+            "stockPrice": "1,975$",
+            "stockRate": "25.00(1.28%)",
+            "stockName": "SSNLF",
+            "lastUpdated": "5 sept 3:50 PM"
+        }
+    }
+}
