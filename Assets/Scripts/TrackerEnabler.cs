@@ -13,7 +13,6 @@ public class TrackerEnabler : MonoBehaviour {
   void Update() {
     if (GenericInputHelper.getTap()) {
       isTracking = !isTracking;
-      Debug.Log("tracking" + isTracking);
     }
   }
 }
