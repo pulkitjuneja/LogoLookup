@@ -1,0 +1,54 @@
+/*
+ * Copyright (c) 2012-2016 PTC Inc. All Rights Reserved.
+ *
+ * Confidential and Proprietary – PTC Inc.
+ * Vuforia is a trademark of PTC Inc., registered in the United States and other countries.
+ */
+
+.navigation-tab, .navigation-tab:hover {
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 0px;
+    width: 953px;
+}
+
+.panel-tab-section {
+    min-width: 135px;
+    height: 42px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Qualcomm-reg;
+    font-weight: normal !important;
+}
+
+.panel-tab-section a {
+    border: none !important;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+    margin-top: 3px;
+    min-width: 100px;
+}
+
+.panel-tab-section.active {
+    height: 40px;
+    min-width: 135px;
+    border: 1px solid #D9D9D9;
+    border-bottom: 2px solid white;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.panel-tab-section.active a {
+    color: black !important;
+    margin-top: 2px;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+
+.panel-tab-section.active a:hover {
+    color: black !important;
+}
+
+.panel-tab-section a:hover {
+    background: none !important;
+}
+
+

@@ -1,3 +1,4 @@
 public enum EventTypes {
-  ObjectDetected
+  ObjectDetected,
+  CloseScreens //Temporary solution
 }

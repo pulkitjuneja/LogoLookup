@@ -10,25 +10,31 @@ public class StockManager : BaseCardManager {
 
   GameObject Loader;
   GameObject dataHolder ;
+  Text stockValue,stockPercentage,name,lastUpdated;
   public override void Start() {
     base.Start();
     Loader = transform.FindChild("Loader").gameObject;
     dataHolder = transform.Find("DataHolder").gameObject;
+    name = dataHolder.transform.Find("name").gameObject.GetComponent<Text>();
+    stockValue = dataHolder.transform.Find("stockValue").gameObject.GetComponent<Text>();
+    stockPercentage = dataHolder.transform.Find("stockPercentage").gameObject.GetComponent<Text>();
+    lastUpdated = dataHolder.transform.Find("lastUpdated").gameObject.GetComponent<Text>();
   }
 
   public override IEnumerator fetchAndUpdate(TrackerDetectedEventArgs e) {
     Debug.Log("fetch started");
     Loader.SetActive(true);
-    //var request = UnityWebRequest.Get("http://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvsection=0&titles=" + e.objectName);
     yield return new WaitForSeconds(2);
+    TextAsset mockData = Resources.Load<TextAsset>("MockData/companies");
+    JObject company = JObject.Parse(mockData.text)["Google"] as JObject;
     Loader.SetActive(false);
-    // if (request.isError) {
-    //   Debug.Log(request.error);
-    // } else {
-    //   JObject wikiData = JsonConvert.DeserializeObject(request.downloadHandler.text) as JObject;
-    //   wikiText.gameObject.SetActive(true);
-    //   wikiText.text = JsonConvert.SerializeObject(wikiData);
-    // }
     dataHolder.SetActive(true);
+    name.text = e.objectName;
+    stockValue.text = company["stock"]["stockPrice"].ToObject<string>();
+    stockPercentage.text = company["stock"]["stockRate"].ToObject<string>();
+    var stockDelta = float.Parse (company["stock"]["stockRate"]
+    .ToObject<string>().Split('(')[0]);
+    stockPercentage.color = stockDelta > 0 ? Color.blue : Color.red ; 
+    lastUpdated.text = company["stock"]["lastUpdated"].ToObject<string>();
   }
 }

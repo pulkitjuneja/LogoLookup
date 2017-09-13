@@ -1,0 +1,299 @@
+/*
+ * Copyright (c) 2012-2016 PTC Inc. All Rights Reserved.
+ *
+ * Confidential and Proprietary – PTC Inc.
+ * Vuforia is a trademark of PTC Inc., registered in the United States and other countries.
+ */
+
+.pagination a:hover, .pagination .active a {
+    background-color: #FFFFFF !important;
+    color: #000 !important;
+}
+
+.pagination a {
+    border: 0px solid #FFFFFF !important;
+    float: none !important;
+    padding: 0px 0px !important;
+}
+
+.modal {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+    background-color: #ffffff;
+    bottom: inherit;
+    z-index: 1050;
+    width: 560px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.modal-footer {
+    padding: 14px 15px 15px !important;
+    margin-bottom: 0 !important;
+    text-align: right !important;
+    background-color: #FFFFFF !important;
+    border-top: 0px solid #ddd !important;
+    -webkit-border-radius: 0 0 6px 6px !important;
+    -moz-border-radius: 0 0 6px 6px !important;
+    border-radius: 0 0 6px 6px !important;
+    -webkit-box-shadow: inset 0 1px 0 #ffffff !important;
+    -moz-box-shadow: inset 0 1px 0 #ffffff !important;
+    box-shadow: inset 0 1px 0 #ffffff !important;
+}
+
+.modal-header {
+    display: none !important;
+}
+
+.modal-body {
+    padding: 15px 15px !important;
+}
+
+form {
+    margin: 0 0 0px !important;
+}
+
+input {
+    margin-bottom: 0px !important;
+}
+
+input[type="text"] {
+    font-size: inherit !important;
+}
+
+h1 {
+    line-height: inherit !important;
+}
+
+h2 {
+    line-height: inherit !important;
+}
+
+h3 {
+    font-size: 22px !important;
+    line-height: 27px;
+}
+
+.navbar-fixed-top {
+    position: inherit !important;
+}
+
+.container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+    width: 970px !important;
+}
+
+.invisible {
+    display: none !important;
+}
+
+.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+    background-color: #E3E3E3 !important;
+    color: #000 !important;
+}
+
+a:hover {
+    color: #0088cc !important;
+}
+
+.control-group.error > label,
+.control-group.error .help-block,
+.control-group.error .help-inline {
+    color: red !important;
+}
+
+.control-group.error .checkbox,
+.control-group.error .radio,
+.control-group.error input,
+.control-group.error select,
+.control-group.error textarea {
+    color: red !important;
+    outline: red !important;
+    border-color: red !important;
+}
+
+.control-group.error .input-prepend .add-on,
+.control-group.error .input-append .add-on {
+    color: red !important;
+    border-color: red !important;
+}
+
+input:focus:required:invalid,
+textarea:focus:required:invalid,
+select:focus:required:invalid {
+    color: red !important;
+}
+
+.alert-danger,
+.alert-error {
+    color: red !important;
+    background-color: #f2dede !important;
+    border-color: #eed3d7 !important;
+}
+
+.label-important,
+.badge-important {
+    background-color: red !important;
+}
+
+h4, h5, h6 {
+    line-height: 19px !important;
+}
+
+.pagination {
+    height: 26px !important;
+}
+
+.btn-primary {
+    background-color: #E7E7E7;
+}
+
+.btn-primary:hover {
+    background-color: #D0D0D0;
+}
+
+.navbar-fixed-top .navbar-inner {
+    padding: 0px !important
+}
+
+.navbar {
+    margin-bottom: 0px !important;
+}
+
+ul {
+    padding: 0px;
+}
+
+* {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+}
+
+.nav-pills > li + li {
+    margin-left: 0px !important;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    line-height: inherit;
+    vertical-align: baseline;
+    border-top: inherit;
+}
+
+.table > thead > tr > th {
+    border-bottom: inherit !important;
+}
+
+h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+input {
+    margin-bottom: 0px !important;
+    padding: 4px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+.dropdown-menu {
+    margin: 0px 0 0 !important;
+}
+
+label {
+    font-weight: normal;
+    line-height: 18px;
+}
+
+.modal-backdrop.in {
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: inherit;
+}
+
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    margin-left: -20px;
+    margin: 3px 0;
+    line-height: normal;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-tabs > li > a {
+    line-height: 18px !important;
+}
+
+.modal-open {
+    overflow: auto !important;
+}
+
+ul.unstyled, ol.unstyled {
+    margin-left: 0;
+    list-style: none;
+}
+
+.alert {
+    padding: 8px 35px 8px 14px;
+    margin-bottom: 18px;
+    color: #c09853;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.dropdown-menu > li > a {
+    line-height: 18px !important;
+    font-size: 15px;
+    padding: 3px 15px;
+}
+
+.nav-stacked {
+    border-bottom: none !important;
+}
+
+.nav-stacked > li {
+    margin-bottom: -3px !important;
+}
+
+.nav-tabs.nav-stacked > li > a {
+    border: 1px solid #ddd;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.nav-tabs.nav-stacked > li:first-child > a {
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+
+/*media all*/
+#header .container {
+    height: 129px;
+}

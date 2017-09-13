@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Buttons : MonoBehaviour {
   Animator LogoInfoScreenAnimator;
@@ -19,6 +20,7 @@ public class Buttons : MonoBehaviour {
   }
   public void closeLogoInfo() {
     LogoInfoScreenAnimator.SetBool("visible", false);
+    EventManager.instance.Fire<EventArgs>(EventTypes.CloseScreens,null);
   }
 
 }

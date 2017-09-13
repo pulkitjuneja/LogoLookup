@@ -1,0 +1,618 @@
+
+<!-- saved from url=(0093)https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Target Manager | Vuforia Developer Portal</title>
+    <!-- Meta Tags -->
+    <meta content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Favicon -->
+    <link href="https://developer.vuforia.com/targetmanager/resources/img/vuforiafavicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./Target Manager _ Vuforia Developer Portal_files/template.css">
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" type="text/css" media="screen" href='/targetmanager/resources/css/ie9.css'/>t
+    <![endif]-->
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MSNQ7J"></script><script type="text/javascript" src="./Target Manager _ Vuforia Developer Portal_files/template.js"></script>
+
+
+    <script type="text/javascript">
+        var contextPath = '/targetmanager';
+        var pricePlanTypesBundle, databaseTypesBundle, vumarkErrorMessagesBundle;
+        //  Initialize bundles
+        if (sessionStorage["plan_types"] === undefined) {
+            $.getJSON(contextPath + "/resources/bundle/price-plan/types.json?v6.2.1.148.20-15", function (data) {
+                sessionStorage["plan_types"] = JSON.stringify(data);
+            }).done(function () {
+                pricePlanTypesBundle = JSON.parse(sessionStorage["plan_types"]);
+            });
+        } else {
+            pricePlanTypesBundle = JSON.parse(sessionStorage["plan_types"]);
+        }
+        if (sessionStorage["database_types"] === undefined) {
+            $.getJSON(contextPath + "/resources/bundle/database/types.json?v6.2.1.148.20-15", function (data) {
+                sessionStorage["database_types"] = JSON.stringify(data);
+            }).done(function () {
+                databaseTypesBundle = JSON.parse(sessionStorage["database_types"]);
+            });
+        } else {
+            databaseTypesBundle = JSON.parse(sessionStorage["database_types"]);
+        }
+        if (sessionStorage["vumark_messages"] === undefined) {
+            $.getJSON(contextPath + "/resources/bundle/vumark/errorMessages.json?v6.2.1.148.20-15", function (data) {
+                sessionStorage["vumark_messages"] = JSON.stringify(data);
+            }).done(function () {
+                vumarkErrorMessagesBundle = JSON.parse(sessionStorage["vumark_messages"]);
+            });
+        } else {
+            vumarkErrorMessagesBundle = JSON.parse(sessionStorage["vumark_messages"]);
+        }
+    </script>
+
+    <link type="text/css" rel="stylesheet" href="./Target Manager _ Vuforia Developer Portal_files/header.css">
+    <link type="text/css" rel="stylesheet" href="./Target Manager _ Vuforia Developer Portal_files/vuforia.css">
+    <link type="text/css" rel="stylesheet" href="./Target Manager _ Vuforia Developer Portal_files/overwrite-bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="./Target Manager _ Vuforia Developer Portal_files/tabs-panel.css">
+    <link type="text/css" rel="stylesheet" href="./Target Manager _ Vuforia Developer Portal_files/btn.css">
+    <link type="text/css" rel="stylesheet" href="./Target Manager _ Vuforia Developer Portal_files/footer.css">
+<style type="text/css">
+:root #header + #content > #left > #rlblock_left
+{ display: none !important; }</style></head>
+<body>
+
+<!-- Google Tag Manager -->
+<noscript>
+    &lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-MSNQ7J"
+            height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
+</noscript>
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+        'gtm.start': new Date().getTime(), event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+        '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-MSNQ7J');</script>
+<!-- End Google Tag Manager -->
+
+<header id="header" class="vuforia-header">
+    <!--
+  ~ Copyright (c) 2012-2016 PTC Inc. All Rights Reserved.
+  ~
+  ~ Confidential and Proprietary â€“ PTC Inc.
+  ~ Vuforia is a trademark of PTC Inc., registered in the United States and other countries.
+  -->
+
+<script>
+    var currentUrl = window.location.pathname;
+    var adminUrls = ["/account_management", "/adminAccount", "/forum_management",
+        "/bill_run", "/content_management", "/admin_legal", "/report_management",
+        "/pricePlan/admin/cloudServicePricePlanSettings"];
+</script>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <input type="hidden" value="" id="userNameHeaderHidden">
+            <a class="navbar-brand" href="https://developer.vuforia.com/"><strong>Vuforia</strong> Developer</a>
+
+            <div id="loggedInLogoutDiv" class="pull-right login-btn-block" style="display: block;">
+                <ul class="navbar-nav">
+                    <li class="dropdown login-user  rb">
+                        <a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" class="dropdown-toggle headerLink" data-toggle="dropdown">
+                            <span id="helloUser"><span class="userNameInHeader truncate" title="PulkitJuneja">Hello PulkitJuneja</span><span id="unreadMessages"></span></span>
+                            <span class="arrow-ico pull-right"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a id="accountInfo" href="https://developer.vuforia.com/user/6374120">
+                                Account Info</a></li>
+                            <li><a id="paymentMethod" href="https://developer.vuforia.com/user/6374120/billing_info">Payment Method</a></li>
+                            <li><a id="billingStatements" href="https://developer.vuforia.com/statement-history/6374120">Billing Statements</a></li>
+                            <li><a id="accountMessages" href="https://developer.vuforia.com/messages">Messages</a></li>
+                        </ul>
+                </li></ul>
+                <a id="accountLogOut" href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" class="btn-no-style headerLink logoutButtonLink">Log Out</a>
+            </div>
+            <div id="loginRegisterDiv" class="pull-right login-btn-block">
+                <a class="btn-no-style rb" href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" id="vuforiaLogin">Log In</a>
+                <a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" class="btn-no-style" id="vuforiaRegister">Register</a>
+            </div>
+            <script type="text/javascript">
+                if (sessionStorage["username"] != null) {
+                    $("#loginRegisterDiv").hide(0);
+                    $(".userNameInHeader").html("Hello " + getStringOfFixedLength(sessionStorage["username"], 17));
+                    $("#loggedInLogoutDiv").show(0);
+                    sessionStorage["register"] = "false";
+                    $('.userNameInHeader').attr('title', sessionStorage["username"]);
+                }
+
+                if (sessionStorage["register"] == "true") {
+                    $("#loggedInLogoutDiv").hide(0);
+                    $("#loginRegisterDiv").show(0);
+                }
+            </script>
+            <div class="clearfix navigation-bar blockMenu">
+                <ul class="navbar-nav primary-nav">
+                    <li id="drupalHome" class="getStartedMenu commonParentMenu"><a href="https://developer.vuforia.com/">Home</a></li>
+                    <li id="drupalPricing" class="apiMenu"><a href="https://developer.vuforia.com/pricing">Pricing</a></li>
+                    <li id="drupalDownloads" class="apisMenu commonParentMenu"><a href="https://developer.vuforia.com/downloads">Downloads</a></li>
+                    <li id="drupalLibrary" class="resourcesMenu commonParentMenu"><a href="https://library.vuforia.com/">Library</a></li>
+                    <li id="develop" class="targetManagerMenu commonParentMenu active"><a href="https://developer.vuforia.com/targetmanager/licenseManager/licenseListing" class="targetManager active">Develop</a>
+                    </li>
+                    <li id="drupalSupport" class="supportMenu commonParentMenu"><a href="https://developer.vuforia.com/support">Support</a></li>
+                    
+                    <script type="text/javascript">
+                        if (sessionStorage["isAdminAccess"] == "true") {
+                            $(".adminMenu").show();
+                            displayVersionForAdmin();
+                            $("#tspVersionDisplay").show();
+                        } else $(".adminMenu").hide();
+                    </script>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="subnav-new clearfix resources commonTab" style="display: none">
+        <ul class="navbar-nav nav-pills">
+            <li id="drupalSdk"><a href="https://developer.vuforia.com/downloads/sdk">SDK</a></li>
+            <li id="drupalSamples"><a href="https://developer.vuforia.com/downloads/samples">Samples</a></li>
+            <li id="drupalTools"><a href="https://developer.vuforia.com/downloads/tool">Tools</a></li>
+            <li id="drupalBeta"><a href="https://developer.vuforia.com/downloads/beta">Early Access</a></li>
+            <li id="drupalStudio"><a href="https://developer.vuforia.com/downloads/studio">Studio</a></li>
+        </ul>
+    </div>
+    <div class="subnav-new clearfix support commonTab" style="display: none">
+        <ul class="navbar-nav nav-pills">
+            <li id="drupalSupportCenter"><a href="https://developer.vuforia.com/support">Support Center</a></li>
+            <li id="drupalForums"><a href="https://developer.vuforia.com/forum">Forums</a></li>
+            <li id="drupalVIP"><a href="https://developer.vuforia.com/vip">VIP Support</a></li>
+        </ul>
+    </div>
+    <div class="subnav-new clearfix admin commonTab" style="display: none">
+        <ul class="navbar-nav nav-pills adminSelect">
+            <li id="account"><a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#">Accounts</a></li>
+            <li id="apps"><a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#">Licenses</a></li>
+            <li id="databases"><a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#">Databases</a></li>
+            <li id="pricePlan"><a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#">Price Plans</a></li>
+            <li id="billing"><a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#">Billing</a></li>
+            <li id="contentManagement"><a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#">Content</a></li>
+            <li id="legal"><a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#">Legal</a></li>
+            <li id="forums"><a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#">Forums</a></li>
+            <li id="reports"><a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#">Reports</a></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        for (var index in adminUrls) {
+            if (currentUrl.indexOf(adminUrls[index]) >= 0) {
+                $(".admin").show();
+                $(".adminMenu").addClass("active");
+                break;
+            }
+        }
+    </script>
+
+    <div class="subnav-new clearfix license" style="display: block;">
+        <ul class="navbar-nav nav-pills  licenseSelect">
+            <li class="sub-nav licenseManager"><a id="licenseManagerUrl" href="https://developer.vuforia.com/targetmanager/licenseManager/licenseListing">License Manager</a></li>
+            <li class="sub-nav targetManager active"><a id="targetManagerUrl" href="https://developer.vuforia.com/targetmanager/project/checkDeviceProjectsCreated?dataRequestedForUserId=">Target Manager</a></li>
+        </ul>
+    </div>
+</div>
+</header>
+
+
+
+
+
+
+
+<script type="text/javascript" src="./Target Manager _ Vuforia Developer Portal_files/singleImage_targetDetails.js"></script>
+
+<section class="main-content target-details-margin-from-footer" style="min-height: 543px;">
+    <script type="text/javascript">
+        var csrf_token = 'a2c46f66-a76f-4d09-b6e6-7316adbd84bc';
+        var contextPath = '/targetmanager';
+        var targetName = "Samsung";
+        var browser = navigator.userAgent;
+        var dt = null;
+        var dataRequestedForUsername = 'PulkitJuneja';
+        var tag = "";
+        var isAdminView = "";
+    </script>
+    <div class="container">
+        <div class="wrapper">
+
+            <div class="breadcrumb-links">
+                
+                    
+                    
+                        <a href="https://developer.vuforia.com/targetmanager/project/checkDeviceProjectsCreated?dataRequestedForUserId=">
+                            Target Manager
+                        </a>
+                    
+                
+                <span class="divider"> <span class="breadcrumb-arrow"> </span>
+                <a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" id="projectNameClickSingle" title="">Logos</a>
+                <span class="divider"> <span class="breadcrumb-arrow"> </span>
+                <span class="active active-breadcrumb" title="">Samsung</span>
+            </span></span></div>
+
+
+            
+                <div id="succMessage" style="display: none;">
+                    <div class="alert alert-success fade in">
+                        <a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" class="close messageClose">×</a>
+                        <span id="succMessageSpan"></span> <br>
+                    </div>
+                </div>
+                <div id="errMessage" style="display: none;">
+                    <div class="alert alert-error fade in ">
+                        <a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" class="close messageClose">×</a>
+                        <span id="errMessageSpan"></span>
+                    </div>
+                </div>
+                
+
+                
+
+                <h1 id="targetNameHeader" class="details-main-title">Samsung</h1>
+                <div class="targetdetail-actions">
+                    
+                        <a class="edit-name" href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" data-toggle="modal" id="renameLink">Edit Name</a>
+                        <a class="remove" id="deleteDeviceSingleTargetUserView" href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" data-toggle="modal">Remove</a>
+                    
+                </div>
+                <div class="target-details">
+                    
+                        <form id="submitOnSuccess" action="https://developer.vuforia.com/targetmanager/project/deviceTargetListing" method="POST">
+                            <input type="hidden" value="ca6fc3128b61443bb3ed78b8008b1fdd" name="projectId" id="projectIdToSend">
+                            <input type="hidden" value="Logos" name="projectName" id="projectName">
+                            <input type="hidden" value="" name="projectLicenseId" id="projectLicenseId">
+                            <input type="hidden" value="" name="showAdminBreadCrumb" id="showAdminBreadCrumb1">
+                            <input type="hidden" value="6374120" name="dataRequestedForUserId" id="dataRequestedForUserId1">
+                            <input type="hidden" value="PulkitJuneja" name="dataRequestedForUsername" id="dataRequestedForUsername1">
+                        <div>
+<input type="hidden" name="CSRFToken" value="a2c46f66-a76f-4d09-b6e6-7316adbd84bc">
+</div></form>
+
+                        <form id="pageReload" class="form-data" action="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails" method="POST">
+                            <input type="hidden" value="b7ff9c60f38c4e3cbbe21cd69906c9eb" name="targetId" id="targetIdToSend">
+                            <input type="hidden" value="ca6fc3128b61443bb3ed78b8008b1fdd" name="projectId" id="projIdToSend">
+                            <input type="hidden" value="Logos" name="projectName" id="projName">
+                            <input type="hidden" value="" name="projectLicenseId" id="projectLicenseId">
+                            <input type="hidden" value="" name="showAdminBreadCrumb" id="showAdminBreadCrumbSingle">
+                            <input type="hidden" value="" name="isAdmin" id="isAdmin">
+                            <input type="hidden" value="6374120" name="userEguid" id="userEguid">
+                            <input type="hidden" value="PulkitJuneja" name="dataRequestedForUsername" id="dataRequestedForUsername">
+                            <input type="hidden" value="6374120" name="dataRequestedForUserId" id="dataRequestedForUserIdDev">
+                        <div>
+<input type="hidden" name="CSRFToken" value="a2c46f66-a76f-4d09-b6e6-7316adbd84bc">
+</div></form>
+                    
+                    <span id="loadingDiv" class="spinner" style="display: none;"><img src="./Target Manager _ Vuforia Developer Portal_files/ajax-loader.gif" alt="">
+					</span>
+                    <span class="hidImage" style="display:none;">
+						<img id="hiddenImageElement" src="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails">
+					</span>
+                    <div class="column-1">
+                        <div class="show-hide-image thumbnail" id="imageThumbnail">
+                            <div><img id="small_scale_image_url" src="./Target Manager _ Vuforia Developer Portal_files/low_resolution_image.jpg" alt="Loading..." style="display: inline; width: 530px; height: 132.5px;">
+                            </div>
+                        </div>
+                        <div class="show-hide-image thumbnail" id="featutreImage" style="display: none;">
+                            <div><img id="feature_image_url" src="./Target Manager _ Vuforia Developer Portal_files/feature_image.png" alt="Image not found" style="display: inline; width: 530px; height: 132.5px;">
+                            </div>
+                        </div>
+                        <div>
+							 <span class="not-visible-onload" style="display: inline;">
+								 
+                                     <a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" data-toggle="modal" id="imageChangeLink" onclick="clearChangeModalWindowErrors();">Update Target</a>
+                                 
+							</span>
+                            
+                                <span class="show-hide-feature feature-image-single">
+                                    <a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" style="" id="imageOn" class="showFeaturesImageDevice">Show Features</a>
+                                    <a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" onclick="showImage()" style="display: none;" id="featuresOn">Hide Features</a>
+                                 </span>
+                            
+                            
+                        </div>
+
+                    </div>
+                    <div class="column-2">
+                        <input type="hidden" id="augRatingHid" value="4">
+                        <input type="hidden" id="pIdHid" value="">
+
+                        <ul class="unstyled">
+                            <li id="targetTypeSingleImage">Type: Single Image</li>
+                            <li id="targetStatusSingleImage">Status: Active</li>
+                            <li id="targetIDSingleImage">Target ID: b7ff9c60f38c4e3cbbe21cd69906c9eb</li>
+                            <li class="not-visible-onload augRating" style="display: list-item;">Augmentable:
+                                <span class="rating" style="display:none;"> <span class="rating-1">1</span>
+								</span>
+                                <span class="rating" style="display:none;"> <span class="rating-2">2</span>
+								</span>
+                                <span class="rating" style="display:none;"> <span class="rating-3">3</span>
+								</span>
+                                <span class="rating" style=""> <span class="rating-4">4</span>
+								</span>
+                                <span class="rating" style="display:none;"> <span class="rating-5">5</span>
+								</span>
+                                <span class="rating" style="display:none;"> <span class="rating-0">0</span>
+								</span>
+
+                                <div class="alert rating-info-text tag" style="display: none;" id="tagValues">
+                                    <ul>
+										<span id="lowFeature" style="display: none;">
+											<li>Increase the total number of features in the image
+												by adding more visual detail to the whole scene</li>
+										</span>
+                                        <span id="lowContrast" style="display: none;">
+											<li>Ensure that all objects have clearly defined edges
+												and high local contrast</li>
+										</span>
+                                        <span id="tooRepetitive" style="display: none;">
+											<li>Avoid repetitive patterns</li>
+										</span>
+                                        <span id="limitedFeautreSpread" style="display: none;">
+											<li>Improve the overall feature distribution by adding
+												textured objects in the empty spaces of the image</li>
+										</span>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="not-visible-onload" style="display: list-item;">Added:
+                                <script type="text/javascript">
+                                    dt = '1504607734';
+                                    localDate2 = getDateAsPerTimeZoneWithoutTime(dt);
+                                </script>
+                                <span id="createdDate">
+	                          		<script type="text/javascript">document.write(localDate2);</script>Sep 5, 2017 16:05
+								</span>
+                            </li>
+                            <li class="not-visible-onload" style="display: list-item;">Modified:
+                                <script type="text/javascript">
+                                    dt = '1504607735';
+                                    localDate2 = getDateAsPerTimeZoneWithoutTime(dt);
+                                </script>
+                                <span id="modDate">
+								 	<script type="text/javascript">document.write(localDate2);</script>Sep 5, 2017 16:05
+								</span>
+                            </li>
+                        </ul>
+
+
+                        <ul id="messages" class="unstyled">
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            
+            
+
+        </div>
+        <!-- / wrapper -->
+    </div>
+    <!-- container -->
+    
+        
+
+
+
+
+<div class="modal modal_c" id="changeImageModal">
+    <div class="modal-header">
+        <button id="deleteCloseModal" type="button" class="close closeModalDialog" onclick="clearChangeModalWindowErrors();" data-dismiss="modal">×
+        </button>
+        <h3>Change Image</h3>
+    </div>
+    <form id="changeImageForm" class="form-vertical" action="https://developer.vuforia.com/targetmanager/singleDeviceTarget/changeDeviceTargetSingleImage" method="post" enctype="multipart/form-data">
+        <div class="modal-body modal-body_c">
+            <fieldset>
+                <div id="webServiceFailedMsg" style="display: none">
+                    <div class="alert alert-error fade in">
+                        <a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" class="close messageClose">×</a>
+                        <span id="errorMessageSpan"></span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div for="chhoseImgFile" class="dialog_title">Change Image</div>
+                    <div id="responseDiv" style="display:none"></div>
+                    <div class="controls">
+                        <input value="b7ff9c60f38c4e3cbbe21cd69906c9eb" id="targetId" name="targetId" type="hidden">
+                        <input value="Logos" id="projName" name="projName" type="hidden">
+                        <input value="50.0" id="width" name="width" type="hidden">
+                        <input value="ca6fc3128b61443bb3ed78b8008b1fdd" id="projectId" name="projectId" type="hidden">
+                        <div class="controls clear">
+                            <input type="text" class="input-file2 default-label" id="chhoseImgFile" placeholder="Choose File" disabled="disabled" style="color: dimgrey !important;">
+                            <div class="input-file btn-input-file">
+                                <span>Browse...</span>
+                                <input class="upload" id="changeImageFile" type="file" name="fileData[0]" size="35" tabindex="3/">
+                            </div>
+                        </div>
+                        <input type="hidden" value="" name="showAdminBreadCrumb" id="showAdminBreadCrumbChange">
+                        <p id="infoBar" class="help-block">File must be 8 or 24 bit PNG or JPG. JPG must be RGB or
+                            greyscale. Max size is 2.25MB.</p>
+
+                    </div>
+                </div>
+                <span id="infoBarForSingleUpload" class="errorMessage" style="display: none;">Please select an image.</span>
+
+            </fieldset>
+
+
+        </div>
+        <div class="modal-footer">
+            <input type="button" data-dismiss="modal" id="cancelChangeDeviceTargetBtn" class="btn closeModalDialog btnFixSize" onclick="clearChangeModalWindowErrors();" value="Cancel">
+            <button type="button" id="ChangeDeviceTargetBtn" class="btn btn-primary closeModalDialog btnFixSize">Done
+            </button>
+        </div>
+    <div>
+<input type="hidden" name="CSRFToken" value="a2c46f66-a76f-4d09-b6e6-7316adbd84bc">
+</div></form>
+</div>
+<!-- / changeImageModal -->
+        
+
+
+
+
+<div class="modal modal_c" id="deleteTargetModal">
+    <div class="modal-header">
+        <button id="closeDeleteModal" type="button" class="close closeModalDialog" data-dismiss="modal">×
+        </button>
+        <div class="dialog_title">Delete Target</div>
+    </div>
+    <div class="modal-body modal-body_c">
+        <div class="dialog_title">Remove Target</div>
+        <p>Are you sure you want to remove the target?</p>
+        <input type="hidden" id="targetIdDelete" name="targetId" class="span5" value="b7ff9c60f38c4e3cbbe21cd69906c9eb">
+        <input type="hidden" id="projectIdDelete" name="projectId" class="span5" value="ca6fc3128b61443bb3ed78b8008b1fdd">
+    </div>
+    <div class="modal-footer">
+        <input type="button" id="cancelDeleteDeviceTargetBtn" class="btn closeModalDialog btnFixSize" data-dismiss="modal" value="Cancel"> <input type="submit" id="deleteDeviceTargetBtn" class="btn btn-primary closeModalDialog btnFixSize" value="Remove" onclick="return validateDelete(&#39;../singleDeviceTarget/deviceSingleDeleteTarget&#39;)">
+    </div>
+</div>
+<!-- / deleteTarget -->
+        
+
+
+
+
+<script type="text/javascript" src="./Target Manager _ Vuforia Developer Portal_files/rename_target.js"></script>
+
+
+<div class="modal modal_c" id="renameTargetModal">
+    <div class="modal-header">
+        <button id="renameCloseButton" type="button" class="close closeModalDialog" data-dismiss="modal">×
+        </button>
+        <h3>Rename Target</h3>
+    </div>
+    <div class="modal-body modal-body_c">
+        <fieldset>
+            <div class="control-group">
+                <div class="dialog_title">Edit Name</div>
+                <div class="controls">
+                    <input type="text" class="input-xlarge_c" id="renamedTargetName" name="renamedTargetName" value="Samsung" maxlength="64">
+                    <input type="hidden" id="targetId" name="targetId" class="span5" value="b7ff9c60f38c4e3cbbe21cd69906c9eb">
+                    <input type="hidden" id="parentTargetId" name="parentTargetId" class="span5" value="">
+                    <input type="hidden" id="projectIdRename" name="projectId" class="span5" value="ca6fc3128b61443bb3ed78b8008b1fdd">
+                    <input type="hidden" id="targetNameRename" name="targetName" class="span5" value="Samsung">
+                    <span id="infoBarForRename" class="alert-error" style="display: none;"></span>
+                </div>
+            </div>
+            <div id="renameDivDeviceSingle" style="display: none">
+                <div class="alert alert-error fade in">
+                    <a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#" class="close messageClose">×</a>
+                    <span id="renameSpanDeviceSingle"></span>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+        <input type="button" id="cancelRenameDeviceTargetBtn" class="btn closeModalDialog btnFixSize" data-dismiss="modal" value="Cancel">
+        
+            <input type="submit" id="renameDeviceTargetBtn" class="btn btn-primary closeModalDialog btnFixSize" value="Save" onclick="return validateRename(&#39;../singleDeviceTarget/deviceSingleRenameTarget&#39;)">
+        
+        
+
+
+    </div>
+</div>
+<!-- / renameTarget -->
+    
+</section>
+<form id="submitOnClick" class="form-data" action="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails" method="POST">
+    <input type="hidden" value="b7ff9c60f38c4e3cbbe21cd69906c9eb" name="targetId" id="targetIdToSend">
+    <input type="hidden" value="ca6fc3128b61443bb3ed78b8008b1fdd" name="projectId" id="projIdToSend">
+    <input type="hidden" value="Logos" name="projectName" id="projName">
+    <input type="hidden" value="" name="projectLicenseId" id="projectLicenseId">
+    <input type="hidden" value="" name="showAdminBreadCrumb" id="showAdminBreadCrumbSingle">
+    <input type="hidden" value="" name="isAdmin" id="isAdmin">
+    <input type="hidden" value="6374120" name="userEguid" id="userEguid">
+    <input type="hidden" value="PulkitJuneja" name="dataRequestedForUsername" id="dataRequestedForUsername">
+    <input type="hidden" value="6374120" name="dataRequestedForUserId" id="dataRequestedForUserIdDev">
+<div>
+<input type="hidden" name="CSRFToken" value="a2c46f66-a76f-4d09-b6e6-7316adbd84bc">
+</div></form>
+
+
+
+
+
+<form id="deviceTargetListingBreadcrumb" action="https://developer.vuforia.com/targetmanager/project/deviceTargetListing" method="POST">
+    <input type="hidden" value="ca6fc3128b61443bb3ed78b8008b1fdd" name="projectId" id="projIdBreadcrumb">
+    <input type="hidden" value="" name="isAdmin" id="isAdmin">
+    <input type="hidden" value="Logos" name="projectName" id="projNameBreadcrumb">
+    <input type="hidden" value="" name="projectLicenseId" id="projectLicenseId">
+    <input type="hidden" value="" name="dbListingType" id="dbListingType">
+    <input type="hidden" value="" name="showAdminBreadCrumb" id="showAdminBreadCrumbBreadcrumb">
+    <input type="hidden" value="PulkitJuneja" name="dataRequestedForUsername" id="dataRequestedForUsername">
+    <input type="hidden" value="6374120" name="dataRequestedForUserId" id="dataRequestedForUserId">
+    <input type="hidden" name="licenseStatus" id="licenseStatus" value="">
+<div>
+<input type="hidden" name="CSRFToken" value="a2c46f66-a76f-4d09-b6e6-7316adbd84bc">
+</div></form>
+
+<footer class="page-footer">
+    <!--
+  ~ Copyright (c) 2012-2016 PTC Inc. All Rights Reserved.
+  ~
+  ~ Confidential and Proprietary â€“ PTC Inc.
+  ~ Vuforia is a trademark of PTC Inc., registered in the United States and other countries.
+  -->
+
+<div class="container">
+    <div class="wrapper">
+        <div class="clearfix">
+            <div class="pull-left footer-left-block">
+                <ul class="footer-nav list-inline separated">
+                    <li><a href="https://developer.vuforia.com/support">Contact</a></li>
+                    <li><a href="https://developer.vuforia.com/legal/tos">Terms of Use</a></li>
+                    <li><a href="https://developer.vuforia.com/legal/privacy">Privacy Policy</a></li>
+                    <li><a href="https://developer.vuforia.com/legal/cookies">Cookie Policy</a></li>
+                </ul>
+                <hr class="separator">
+                <div class="copyright">
+                    <p>©2011-<span id="vuforiaCopyRightYear">2017</span> PTC Inc. All rights reserved. Nothing in these
+                        materials is an offer to sell any of the components or devices referenced herein. PTC and
+                        Vuforia are trademarks or registered trademarks of PTC Inc. in the United States and other
+                        countries. Other products and brand names referenced may be trademarks or registered trademarks
+                        of their respective owners. Vuforia is a product of PTC Inc.</p>
+                    <p id="tspVersionDisplay" style="display: none;"></p>
+                    <p id="drupalVersionDisplay" style="display: none;"></p>
+                    <script type="text/javascript">
+                        if (sessionStorage["TSPVersion"] != null) {
+                            $("#tspVersionDisplay").text("TSP Version " + sessionStorage["TSPVersion"]);
+                        }
+                        if (sessionStorage["DrupalVersion"] != null) {
+                            $("#drupalVersionDisplay").text("Drupal Version " + sessionStorage["DrupalVersion"]);
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="pull-right">
+                <ul class="social-media clearfix">
+                    <li class="youTube"><a href="https://twitter.com/vuforia" title="Twitter" target="_blank">Twitter</a></li>
+                    <li class="twitter"><a href="https://www.youtube.com/vuforia" title="YouTube" target="_blank">YouTube</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</footer>
+
+<script type="text/javascript" src="./Target Manager _ Vuforia Developer Portal_files/template_body.js"></script>
+
+
+<ul id="foror-tooltip" style="display: none; padding: 0.5em 0.7em; margin: 0px; list-style: none; float: none; font-size: 1em; border-radius: 15px; opacity: 0.6; background: black; position: absolute; z-index: 201;"><li id="dago-wallpaper" style="padding: 0.2em 0px; margin: 0px; list-style: none; float: none; font-size: 1em; background: black; position: relative;"><a href="https://developer.vuforia.com/targetmanager/singleDeviceTarget/deviceSingleImageTargetDetails#">Get Desktop Wallpaper</a></li></ul></body></html>
